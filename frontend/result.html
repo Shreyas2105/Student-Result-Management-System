@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>SRMS – Result</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body data-page="result">
+
+<header class="topbar">
+  <h1>Result Sheet</h1>
+  <div>
+    <button class="btn btn-secondary" type="button" onclick="printResult()">Print Result</button>
+    <button class="btn btn-outline" type="button" onclick="window.location.href='dashboard.html'">Back</button>
+    <button class="btn btn-outline" type="button" onclick="logout()">Logout</button>
+  </div>
+</header>
+
+<main class="container">
+  <section class="card">
+
+    <h2 id="rRoll">Roll No: -</h2>
+
+    <div class="table-wrapper">
+      <table id="resultTable">
+        <thead>
+          <tr><th>Subject</th><th>Marks</th></tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+
+    <div class="stats-row">
+      <p id="total" class="badge-info">Total: -</p>
+      <p id="percentage" class="badge-info">Percentage: -</p>
+      <p id="grade" class="badge-info">Grade: -</p>
+    </div>
+
+    <p id="resultMsg" class="muted small"></p>
+
+  </section>
+</main>
+
+<div id="popup" class="popup hidden"><p id="popupText"></p></div>
+
+<script src="script.js"></script>
+</body>
+</html>
