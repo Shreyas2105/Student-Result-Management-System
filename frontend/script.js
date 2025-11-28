@@ -1,11 +1,7 @@
 const API_BASE = "http://localhost:5000/api";
 
-/* Helper */
 function $(id) { return document.getElementById(id); }
 
-/* ======================================================
-                        POPUP
-====================================================== */
 function showPopup(message, type = "success") {
   const popup = $("popup");
   const text = $("popupText");
@@ -20,9 +16,7 @@ function showPopup(message, type = "success") {
   }, 2000);
 }
 
-/* ======================================================
-                        LOGIN
-====================================================== */
+//login
 async function login() {
   const username = $("username").value.trim();
   const password = $("password").value.trim();
@@ -56,16 +50,12 @@ async function login() {
   }
 }
 
-/* ======================================================
-                        LOGOUT
-====================================================== */
+//logout
 function logout() {
   window.location.href = "index.html";
 }
 
-/* ======================================================
-                  ADD STUDENT
-====================================================== */
+//add_student
 async function addStudent() {
   const rollNo = $("rollNo").value.trim();
   const name = $("name").value.trim();
@@ -101,9 +91,7 @@ async function addStudent() {
   }
 }
 
-/* ======================================================
-                      LOAD STUDENTS
-====================================================== */
+//load-student
 let allStudents = [];
 
 async function loadStudents() {
@@ -151,9 +139,7 @@ async function loadStudents() {
   }
 }
 
-/* ======================================================
-                  DELETE STUDENT
-====================================================== */
+//delete_student
 async function deleteStudent(rollNo) {
   if (!confirm(`Delete student ${rollNo}?`)) return;
 
@@ -177,9 +163,7 @@ async function deleteStudent(rollNo) {
   }
 }
 
-/* ======================================================
-                  EDIT STUDENT (MODAL)
-====================================================== */
+//edit
 function openEditStudent(rollNo, name, className, year) {
   $("editRoll").value = rollNo;
   $("editName").value = name;
@@ -222,9 +206,7 @@ async function saveEditedStudent() {
   }
 }
 
-/* ======================================================
-                     SEARCH
-====================================================== */
+//search
 function filterStudents() {
   const term = $("searchBox").value.toLowerCase();
   const rows = document.querySelectorAll("#studentsTable tbody tr");
@@ -234,11 +216,9 @@ function filterStudents() {
   });
 }
 
-/* ======================================================
-                   NAVIGATION
-====================================================== */
+//nav
 function goToAddMarks(rollNo) {
-  localStorage.setItem("currentRoll", rollNo); // EDIT MODE
+  localStorage.setItem("currentRoll", rollNo);
   window.location.href = "add-marks.html";
 }
 
@@ -248,13 +228,11 @@ function viewResult(rollNo) {
 }
 
 function openBlankMarksPage() {
-  localStorage.removeItem("currentRoll"); // BLANK MODE
+  localStorage.removeItem("currentRoll"); 
   window.location.href = "add-marks.html";
 }
 
-/* ======================================================
-                  LOAD MARKS (EDIT MODE)
-====================================================== */
+
 async function loadMarksForEditing(rollNo) {
   try {
     const res = await fetch(`${API_BASE}/results/${rollNo}`);
@@ -276,9 +254,7 @@ async function loadMarksForEditing(rollNo) {
   }
 }
 
-/* ======================================================
-                    ADD / UPDATE MARKS
-====================================================== */
+//add/update marks
 async function addMarks() {
   const storedRoll = localStorage.getItem("currentRoll");
   const rollNo = $("rollMarks").value.trim() || storedRoll;
@@ -318,9 +294,7 @@ async function addMarks() {
   }
 }
 
-/* ======================================================
-                      RESULT PAGE
-====================================================== */
+//res page
 async function loadResult() {
   const rollNo = localStorage.getItem("currentRoll");
   $("rRoll").textContent = "Roll No: " + rollNo;
@@ -354,14 +328,12 @@ async function loadResult() {
   }
 }
 
-/* PRINT PDF */
+//pdf print
 function printResult() {
   window.print();
 }
 
-/* ======================================================
-                  PAGE INITIALIZE
-====================================================== */
+
 document.addEventListener("DOMContentLoaded", () => {
   const page = document.body.getAttribute("data-page");
 
