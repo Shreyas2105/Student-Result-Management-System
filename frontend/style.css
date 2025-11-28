@@ -1,6 +1,3 @@
-/* ===========================
-   GLOBAL RESET + BASE STYLE
-=========================== */
 * {
   margin: 0;
   padding: 0;
@@ -13,9 +10,6 @@ body {
   color: #222;
 }
 
-/* ===========================
-   TOPBAR
-=========================== */
 .topbar {
   background: #0d6efd;
   color: white;
@@ -29,9 +23,6 @@ body {
   font-size: 22px;
 }
 
-/* ===========================
-   LAYOUT
-=========================== */
 .container {
   width: 90%;
   margin: 20px auto;
@@ -42,9 +33,6 @@ body {
   width: 400px;
 }
 
-/* ===========================
-   CARD
-=========================== */
 .card {
   background: white;
   padding: 20px;
@@ -63,9 +51,6 @@ body {
   margin-bottom: 10px;
 }
 
-/* ===========================
-   FORM FIELDS
-=========================== */
 .form-group {
   margin-bottom: 14px;
 }
@@ -83,9 +68,6 @@ body {
   border-radius: 6px;
 }
 
-/* ===========================
-   BUTTONS
-=========================== */
 .btn {
   background: #0d6efd;
   color: white;
@@ -118,9 +100,6 @@ body {
   font-size: 12px;
 }
 
-/* ===========================
-   TABLES
-=========================== */
 .table-wrapper {
   overflow-x: auto;
 }
@@ -144,9 +123,6 @@ tr:hover {
   background: #f7f9fc;
 }
 
-/* ===========================
-   POPUP (SUCCESS / ERROR)
-=========================== */
 .popup {
   position: fixed;
   top: 20px;
@@ -175,9 +151,6 @@ tr:hover {
   display: none;
 }
 
-/* ===========================
-   SEARCH BAR
-=========================== */
 .search-input {
   padding: 8px;
   width: 200px;
@@ -185,9 +158,6 @@ tr:hover {
   border-radius: 6px;
 }
 
-/* ===========================
-   MODAL (EDIT STUDENT)
-=========================== */
 .modal {
   position: fixed;
   top: 0;
@@ -213,18 +183,12 @@ tr:hover {
   display: none;
 }
 
-/* ===========================
-   MARKS GRID
-=========================== */
 .marks-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 10px;
 }
 
-/* ===========================
-   BADGES
-=========================== */
 .badge-info {
   background: #e9ecef;
   padding: 6px 10px;
@@ -232,9 +196,6 @@ tr:hover {
   font-weight: bold;
 }
 
-/* ===========================
-   MISC
-=========================== */
 .small { font-size: 12px; }
 .muted { color: #666; }
 .error-text { color: red; font-size: 14px; }
