@@ -1,4 +1,4 @@
-const API_BASE = "https://srms-backend.onrender.com/api";
+const API_BASE = "https://student-result-management-system-z6lc.onrender.com/api";
 
 function $(id) { return document.getElementById(id); }
 
